@@ -109,4 +109,18 @@ public class LinkListNode {
 		return headNode;
 	}
 	
+	//ƒÊ÷√µ•œÚ¡¥±Ì
+	LinkListNode ReverseList(LinkListNode head)
+	{
+		LinkListNode temp = null,nextNode = null;
+		while(head!=null)
+		{
+			nextNode = head.getNext();
+			head.setNext(temp);
+			temp = head;
+			head = nextNode;
+		}
+		return temp;
+	}
+	
 }

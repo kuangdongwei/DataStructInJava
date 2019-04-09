@@ -28,6 +28,9 @@ public class TestLinkListNode {
 		//删除节点测试
 		headNode.DeleteNode(headNode, 1);
 		headNode.printListNode(headNode);
+		//逆置单向链表
+		headNode.ReverseList(headNode);
+		headNode.printListNode(headNode);
 
 	}
 	

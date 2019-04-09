@@ -1,10 +1,10 @@
 package linkTable;
 
-public class ListNode {
+public class LinkListNode {
 
 	private int data;
-	private ListNode next;
-	public ListNode(int data)
+	private LinkListNode next;
+	public LinkListNode(int data)
 	{
 		this.setData(data);
 	}
@@ -14,17 +14,17 @@ public class ListNode {
 	public void setData(int data) {
 		this.data = data;
 	}
-	public ListNode getNext() {
+	public LinkListNode getNext() {
 		return next;
 	}
-	public void setNext(ListNode next) {
+	public void setNext(LinkListNode next) {
 		this.next = next;
 	}
 	
 	
 	
 	//打印链表
-	public void printListNode(ListNode headNode)
+	public void printListNode(LinkListNode headNode)
 	{
 		while(headNode.getNext()!=null)
 		{
@@ -34,10 +34,10 @@ public class ListNode {
 		System.out.println(headNode.getData());
 	}
 	//获取链表长度
-	int ListLength(ListNode headNode)
+	int ListLength(LinkListNode headNode)
 	{
 		int length = 0;
-		ListNode currentNode = headNode;
+		LinkListNode currentNode = headNode;
 		while(currentNode!=null)
 		{
 			length++;
@@ -46,7 +46,7 @@ public class ListNode {
 		return length;
 	}
 	//插入链表
-	public ListNode InsertInLinkList(ListNode headNode,ListNode nodeToInsert,int position)
+	public LinkListNode InsertInLinkList(LinkListNode headNode,LinkListNode nodeToInsert,int position)
 	{
 		if(headNode==null)
 		{
@@ -65,21 +65,21 @@ public class ListNode {
 		}
 		else  //在链表中间或者结尾插入
 		{
-			ListNode previousNode = headNode;
+			LinkListNode previousNode = headNode;
 			int count=1;
 			while(count<position-1) //遍历链表找到要插入位置的前驱节点
 			{
 				previousNode = previousNode.getNext();
 				count++;
 			}
-			ListNode currentNode = previousNode.getNext();
+			LinkListNode currentNode = previousNode.getNext();
 			nodeToInsert.setNext(currentNode);
 			previousNode.setNext(nodeToInsert);
 		}
 		return headNode;
 	}
 	//删除链表
-	ListNode DeleteNode(ListNode headNode,int position)
+	LinkListNode DeleteNode(LinkListNode headNode,int position)
 	{
 		int size = ListLength(headNode);
 		if(position >size || position<1)
@@ -89,20 +89,20 @@ public class ListNode {
 		}
 		if(position == 1) //删除表头节点
 		{
-			ListNode currentNode = headNode.getNext();
+			LinkListNode currentNode = headNode.getNext();
 			headNode = null;
 			return currentNode;
 		}
 		else //删除中间节点或为节点
 		{
-			ListNode previousNode = headNode;
+			LinkListNode previousNode = headNode;
 			int count=1;
 			while(count<position)
 			{
 				previousNode = previousNode.getNext();
 				count++;
 			}
-			ListNode currentNode = previousNode.getNext();
+			LinkListNode currentNode = previousNode.getNext();
 			previousNode.setNext(currentNode.getNext());
 			currentNode = null;
 		}

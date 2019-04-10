@@ -33,6 +33,15 @@ public class LinkListNode {
 		}
 		System.out.println(headNode.getData());
 	}
+	
+	//逆向打印链表
+	public void printListFromEnd(LinkListNode headNode)
+	{
+		if(headNode==null)
+			return;
+		printListFromEnd(headNode.getNext());
+		System.out.printf(headNode.getData()+"->");
+	}
 	//获取链表长度
 	int ListLength(LinkListNode headNode)
 	{

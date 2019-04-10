@@ -25,12 +25,14 @@ public class TestLinkListNode {
 		headNode.InsertInLinkList(headNode, nodeToInsert2, 7);
 		System.out.println("the length of listnode="+headNode.ListLength(headNode));
 		headNode.printListNode(headNode);
+		headNode.printListFromEnd(headNode);//逆向输出链表
 		//删除节点测试
 		headNode.DeleteNode(headNode, 1);
-		headNode.printListNode(headNode);
+		//headNode.printListNode(headNode);
 		//逆置单向链表
-		headNode.ReverseList(headNode);
-		headNode.printListNode(headNode);
+		//headNode.ReverseList(headNode);
+		//headNode.printListNode(headNode);
+		
 
 	}
 	

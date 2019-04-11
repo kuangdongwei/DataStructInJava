@@ -132,4 +132,24 @@ public class LinkListNode {
 		return temp;
 	}
 	
+	//交换链表中的相邻节点
+	void ExchangeAdjacentNodes(LinkListNode head)
+	{
+		LinkListNode curNode,temp,nextNode;
+		curNode = head;
+		if(curNode==null || curNode.getNext()==null)
+			return;
+		head = curNode.getNext();
+		while(curNode!=null&&curNode.getNext()!=null)
+		{
+        	nextNode = curNode.getNext();
+			curNode.setNext(nextNode.getNext());
+			temp = curNode.getNext();
+			nextNode.setNext(curNode);
+			if(temp!=null&&temp.getNext()!=null)
+				curNode.setNext(curNode.getNext().getNext());
+			curNode = temp;
+		}
+	}
+	
 }

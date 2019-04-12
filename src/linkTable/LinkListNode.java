@@ -152,4 +152,29 @@ public class LinkListNode {
 		}
 	}
 	
+	//约瑟夫环问题
+	@SuppressWarnings("null")
+	public void getJosephus(int N,int M)
+	{
+		LinkListNode p = null,q=null;
+		p.setData(1);
+		q=p;
+		for(int i=2;i<=N;i++)
+		{
+			p = p.getNext();
+			p.setData(i);
+		}
+		p.setNext(q);
+		for(int count=N;count>1;count--)
+		{
+			for(int i=0;i<M;i++)
+			{
+				p=p.getNext();
+			}
+			p.setNext(p.getNext().getNext());
+		}
+		System.out.println("last player left standing is :"+p.getData());
+		
+	}
+	
 }

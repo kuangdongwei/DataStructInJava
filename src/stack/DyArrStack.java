@@ -71,6 +71,12 @@ public class DyArrStack {
 		System.out.println("get elment:"+stack.pop());
 		stack.printStack();
 		stack.push(5);
-		
+		stack.push(6);
+		stack.push(7);
+		System.out.println("the new capacity of stack is: "+stack.capacity);
+		stack.printStack();
+		stack.pop();
+		System.out.println("after a element poped");
+		stack.printStack();
 	}
 }

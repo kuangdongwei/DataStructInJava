@@ -2,7 +2,7 @@ package linkTable;
 
 public class FloydCircleJudge {
 
-	/*Floyd环判定方法使用两个在链表中具有不同移动速度的指针，这两个指针在链表中移动，一旦他们两相遇就说明链表存在环*/
+	//Floyd环判定方法使用两个在链表中具有不同移动速度的指针，这两个指针在链表中移动，一旦他们两相遇就说明链表存在环
 
 	boolean DoseLinkedListContainsLoop(LinkListNode head)
 	{

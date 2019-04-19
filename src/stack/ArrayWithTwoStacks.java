@@ -91,7 +91,5 @@ public class ArrayWithTwoStacks {
 		System.out.println("*****after a element pop*****");
 		object.pop(1);
 		System.out.println("get top of stack1 = "+object.top(1));
-		
-		
 	}
 }

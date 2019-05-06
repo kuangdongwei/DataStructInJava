@@ -7,6 +7,10 @@ public class BinaryTreeNode {
 	private BinaryTreeNode leftNode;
 	private BinaryTreeNode rightNode;
 	
+	public BinaryTreeNode(int data)
+	{
+		this.data = data;
+	}
 	public int getData()
 	{
 		return data;
@@ -63,6 +67,23 @@ public class BinaryTreeNode {
 			PreOrder(root.leftNode);
 			PreOrder(root.getRightNode());
 			System.out.println(root.getData());
+		}
+	}
+	
+	//´òÓ¡¶ş²æÊ÷ÔªËØ
+	public void printer(BinaryTreeNode root)
+	{
+		if(root!=null)
+			System.out.println(root.getData());
+		if(root.getLeftNode()!=null)
+			{
+			  System.out.print(root.getData()+"->left:");
+			  printer(root.getLeftNode());
+			}
+		if(root.getRightNode()!=null)
+		{
+			System.out.print(root.getData()+"->right:");
+			printer(root.getRightNode());
 		}
 	}
 	
@@ -207,7 +228,7 @@ public class BinaryTreeNode {
 	public BinaryTreeNode BuildTree(int inOrder[],int preOrder[],int instrt,int inend)
 	{
 	    int preIndex = 0;
-		BinaryTreeNode newNode = new BinaryTreeNode();
+		BinaryTreeNode newNode = new BinaryTreeNode(5);
 		if(instrt>inend)
 		
 			{

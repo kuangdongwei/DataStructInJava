@@ -1,4 +1,4 @@
-package adt;
+package hash;
 //基于有序数组实现堆
 public class Heap {
 

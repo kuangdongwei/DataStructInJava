@@ -12,7 +12,27 @@ public class Test1 {
 		return r;
 	}
 
-	
+	public static  void FirstRepeated(char[] str) {
+        char count[] = new char[256];
+		for(int i=0;i<256;i++)
+		{
+			count[i]=0;
+		}
+		for(int i=0;i<str.length;i++)
+		{
+			if(count[str[i]]==1)
+			{
+				System.out.println(str[i]);
+				break;
+			}
+			else
+			{
+				count[str[i]]++;
+			}
+			if(i==str.length)
+				System.out.println("no repeated characters");
+		}
+	}
 	public static void main(String args[])
 	{
 		System.out.print("roman alphabet:");
@@ -37,5 +57,7 @@ public class Test1 {
 		String nameReverse = reverse("james");
 		System.out.println(nameReverse);
 		
+		char str[] ={'a','b','d','c','c','a','d'};
+	   FirstRepeated(str);
 	}
 }
